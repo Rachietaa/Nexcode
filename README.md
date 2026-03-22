@@ -53,12 +53,14 @@ Before running the project, install:
 - Node.js and npm
 - Git
 - Conda or venv
-- Groq API key
+- OpenAI API key
 - Tavily API key
 
 Optional:
 
 - Ollama for local models
+- Groq API key
+- Anthropic API key
 
 ## Setup
 
@@ -96,13 +98,21 @@ npm install -g tavily-mcp
 Create a `.env` file in the project root:
 
 ```env
-GROQ_API_KEY=your_groq_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
+TAVILY_API_KEY=your_tavily_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
 Only the API keys for the providers you use are required.
+
+## Recommended Model
+
+For this project, use the following model when prompted at startup:
+
+```text
+openai/gpt-oss-120b
+```
 
 ## Add Documentation for RAG
 
@@ -129,12 +139,33 @@ Start the assistant with:
 python main.py
 ```
 
-At startup, NexCode lets you choose:
+At startup, NexCode asks for:
 
-- LLM provider
+- Provider
 - Model
-- Execution mode
+- Mode
 - Whether to resume a previous session
+- Workspace path
+
+In most cases, you can just keep pressing **Enter** to accept the default values shown in parentheses.
+
+Use this startup flow:
+
+- Provider: press Enter to keep the default, or type `openai`
+- Model: enter `openai/gpt-oss-120b`
+- Mode: press Enter to keep `confirm`
+- Resume previous session: press Enter for `n`
+- Workspace path: press Enter to keep the current project folder
+
+Example:
+
+```text
+Provider [groq/ollama/openai/anthropic] (groq): openai
+Model (llama-3.3-70b-versatile): openai/gpt-oss-120b
+Mode [auto/confirm] (confirm):
+Resume previous session? [y/n] (n):
+Workspace path (D:\UNC CHARLOTTE\SPRING SEM - 2\GenAI\nexcode):
+```
 
 ## Example Prompts
 
