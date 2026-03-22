@@ -53,13 +53,12 @@ Before running the project, install:
 - Node.js and npm
 - Git
 - Conda or venv
-- OpenAI API key
+- Groq API key
 - Tavily API key
 
 Optional:
 
 - Ollama for local models
-- Groq API key
 - Anthropic API key
 
 ## Setup
@@ -98,10 +97,10 @@ npm install -g tavily-mcp
 Create a `.env` file in the project root:
 
 ```env
-OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here (optional)
 TAVILY_API_KEY=your_tavily_api_key_here
 GROQ_API_KEY=your_groq_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+ANTHROPIC_API_KEY=your_anthropic_api_key_here (optional)
 ```
 
 Only the API keys for the providers you use are required.
